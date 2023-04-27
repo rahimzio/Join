@@ -1,0 +1,144 @@
+.header-template {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 89px;
+    padding-left: 120px;
+    padding-right: 24px;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    z-index: 1;
+}
+
+.header-template>.topbar-menu {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin-left: auto;
+}
+
+.header-template span {
+    font-size: var(--h5-font-size);
+    white-space: nowrap;
+}
+
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    padding: 2px;
+    border: 3px solid var(--primary);
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.legal-icon {
+    display: none;
+}
+
+.logout-modal {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    padding: 10px 0;
+    background: var(--primary);
+    border-radius: 20px 0 20px 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.logout-modal a {
+    padding: 8px 16px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.notification {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    max-width: 212px;
+    height: fit-content;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: var(--font-label);
+    font-weight: 700;
+    color: white;
+    background: var(--primary);
+    box-shadow: var(--shadow-medium);
+    z-index: 10;
+}
+
+.fade-in {
+    animation: fade-in 0.5s ease-in-out;
+}
+
+.fade-out {
+    animation: fade-out 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    .header-template span {
+        display: none;
+    }
+
+    .help-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .legal-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .header-template {
+        height: 70px;
+    }
+
+    .profile-picture {
+        width: 38px;
+        height: 38px;
+    }
+
+    .legal-icon {
+        display: inline;
+    }
+
+    .logout-modal {
+        top: 55px;
+    }
+}

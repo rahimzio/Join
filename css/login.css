@@ -1,0 +1,72 @@
+body {
+    gap: 20px;
+    height: 100% !important;
+}
+
+header {
+    justify-content: space-between;
+}
+
+.logo {
+    height: 122px;
+    width: 100px;
+}
+
+.sign-up-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 51px
+}
+
+.sign-up-button {
+    height: 51px;
+}
+
+main {
+    height: 513px;
+    width: 652px;
+    background-color: var(--white);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--border-radius-md);
+    align-self: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.txt-h1 {
+    padding: 35px 0;
+    border-bottom: 3px solid var(--secondary);
+}
+
+.text-input {
+    width: 422px;
+}
+
+.mail-icon {
+    background: url(../assets/icons/mail.svg) no-repeat right 20px top 14px !important;
+}
+
+.lock-icon {
+    background: url(../assets/icons/lock.svg) no-repeat right 20px top 14px !important;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-50 {
+    gap: 50px;
+}
+
+.login {
+    width: 145px;
+}
+
+.link {
+    margin-left: 25px;
+}
+
+.space-around {
+    justify-content: space-evenly;
+}

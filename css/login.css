@@ -1,14 +1,24 @@
 body {
     gap: 20px;
-    height: 100% !important;
 }
 
+
+/* Global classes */
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-50 {
+    gap: 50px;
+}
+
+
+/* Top */
 header {
     justify-content: space-between;
 }
 
 .logo {
-    height: 122px;
     width: 100px;
 }
 
@@ -16,13 +26,15 @@ header {
     display: flex;
     align-items: center;
     gap: 20px;
-    height: 51px
+    height: 51px;
 }
 
 .sign-up-button {
     height: 51px;
 }
 
+
+/* Center-box */
 main {
     height: 513px;
     width: 652px;
@@ -34,39 +46,35 @@ main {
     gap: 40px;
 }
 
+
+/* Blue line under text */
 .txt-h1 {
     padding: 35px 0;
     border-bottom: 3px solid var(--secondary);
 }
 
+
+/* Input */
 .text-input {
     width: 422px;
 }
 
 .mail-icon {
-    background: url(../assets/icons/mail.svg) no-repeat right 20px top 14px !important;
+    background: url(../assets/icons/mail.svg) no-repeat right 21px top 13px !important;
 }
 
 .lock-icon {
-    background: url(../assets/icons/lock.svg) no-repeat right 20px top 14px !important;
+    background: url(../assets/icons/lock.svg) no-repeat right 21px top 13px !important;
 }
 
-.gap-10 {
-    gap: 10px;
-}
 
-.gap-50 {
-    gap: 50px;
-}
-
-.login {
-    width: 145px;
-}
-
+/* Forgot password */
 .link {
     margin-left: 25px;
 }
 
-.space-around {
-    justify-content: space-evenly;
+
+/* Log in button */
+.login {
+    width: 145px;
 }

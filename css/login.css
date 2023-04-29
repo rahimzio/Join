@@ -36,8 +36,8 @@ header {
 
 /* Center-box */
 main {
-    height: 513px;
-    width: 652px;
+    min-width: 652px;
+    padding: 35px 115px;
     background-color: var(--white);
     box-shadow: var(--shadow-md);
     border-radius: var(--border-radius-md);
@@ -48,9 +48,9 @@ main {
 
 
 /* Blue line under text */
-.txt-h1 {
-    padding: 35px 0;
+.line {
     border-bottom: 3px solid var(--secondary);
+    width: 150px;
 }
 
 
@@ -61,8 +61,8 @@ main {
 
 .back {
     position: absolute;
-    left: 40px;
-    top: 40px;
+    left: 45px;
+    top: 45px;
     cursor: pointer;
 }
 
@@ -93,5 +93,11 @@ main {
 
 /* Log in button */
 .login {
-    width: 145px;
+    min-width: 145px;
+}
+
+.text {
+    font-size: var(--h5-font-size);
+    font-weight: 400;
+    text-align: center;
 }

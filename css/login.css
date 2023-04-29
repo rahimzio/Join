@@ -36,7 +36,6 @@ header {
 
 /* Center-box */
 main {
-    min-width: 652px;
     padding: 35px 115px;
     background-color: var(--white);
     box-shadow: var(--shadow-md);
@@ -90,14 +89,15 @@ main {
     margin-left: 25px;
 }
 
-
-/* Log in button */
-.login {
-    min-width: 145px;
-}
-
 .text {
     font-size: var(--h5-font-size);
     font-weight: 400;
     text-align: center;
+}
+
+
+/* Log in button */
+.login {
+    min-width: 145px;
+    height: 51px;
 }

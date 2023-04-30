@@ -1,0 +1,350 @@
+.task {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+form>div {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-col {
+    min-width: 400px;
+}
+
+.dividing-line {
+    border-left: 2px solid var(--light-gray);
+}
+
+.task-header h1 {
+    text-align: left;
+}
+
+.label {
+    margin-bottom: 8px;
+}
+
+
+#category {
+    padding: 12px 21px;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    outline: none;
+    background: url(./../assets/icons/dropdown_arrow.svg) no-repeat right 24px center;
+    background-color: var(--white);
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+
+#date {
+    padding: 12px 21px;
+    border: none;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    outline: none;
+    cursor: pointer;
+}
+
+#date::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(./../assets/icons/calendar.svg) no-repeat right -2px center;
+    width: 28px;
+    height: 28px;
+    border-width: thin;
+    cursor: pointer;
+}
+
+
+/* Custom checkbox dropdown */
+#assignee {
+    position: relative;
+    padding: 12px 21px;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    background: url(./../assets/icons/dropdown_arrow.svg) no-repeat right 24px center;
+    background-color: var(--white);
+}
+
+.assignee-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: default;
+}
+
+.assignee-container {
+    position: absolute;
+    bottom: 44px;
+    left: 0;
+    width: 100%;
+    max-height: 160px;
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    box-shadow: var(--shadow-md);
+    overflow-x: auto;
+}
+
+.assignee-container > label {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 20px;
+    cursor: pointer;
+}
+
+.assignee-container > label:hover {
+    color: var(--white);
+    background: var(--primary);
+}
+
+.assignee-container input {
+    appearance: none;
+}
+
+.assignee-container .checkmark {
+    position: absolute;
+    top: 25%;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+    background: url(./../assets/icons/unchecked.svg) no-repeat;
+
+}
+
+.assignee-container input:checked ~ .checkmark {
+    background: url(./../assets/icons/checked.svg) no-repeat;
+}
+
+#assignee-check {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#assignee {
+    margin-top: 8px;
+}
+
+.assignee-task {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    padding: 10px;
+    color: var(--white);
+    font-size: var(--h7-font-size);
+    border: 3px solid white;
+    border-radius: 50px;
+}
+
+#assignee-bubbles {
+    padding: 6px;
+}
+
+/* Custom radio buttons for priority selection */
+#priority {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 8px;
+}
+
+#priority input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+#priority .icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#priority i[class*="urgent"] {
+    background-image: url(./../assets/icons/urgent.svg);
+}
+
+#priority i[class*="medium"] {
+    background-image: url(./../assets/icons/medium.svg);
+}
+
+#priority i[class*="low"] {
+    background-image: url(./../assets/icons/low.svg);
+}
+
+#priority input[type="radio"]:checked + label[for="urgent"] i {
+    background-image: url(./../assets/icons/urgent_white.svg);
+}
+
+#priority input[type="radio"]:checked + label[for="medium"] i {
+    background-image: url(./../assets/icons/medium_white.svg);
+}
+
+#priority input[type="radio"]:checked + label[for="low"] i {
+    background-image: url(./../assets/icons/low_white.svg);
+}
+
+#priority input[type="radio"]:checked + label[for="urgent"] {
+    color: var(--white);
+    background: var(--urgent);
+}
+
+#priority input[type="radio"]:checked + label[for="medium"] {
+    color: var(--white);
+    background: var(--medium);
+}
+
+#priority input[type="radio"]:checked + label[for="low"] {
+    color: var(--white);
+    background: var(--low);
+}
+
+#priority label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: var(--font-h6);
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    cursor: pointer;
+    transition: transform 0.14s ease-in-out;
+}
+
+#priority label:hover {
+    box-shadow: var(--shadow-sm);
+    transform: scale(105%);
+}
+
+
+/* Subtasks */
+#subtask-input {
+    flex-grow: 1;
+    font-size: var(--h6-font-size);
+    padding: 13px 21px;
+    margin-top: 8px;
+    border-top: 1px solid var(--light-gray);
+    border-left: 1px solid var(--light-gray);
+    border-bottom: 1px solid var(--light-gray);
+    border-right: none;
+    border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+    background: white;
+}
+
+#subtask-add {
+    font-size: var(--h6-font-size);
+    padding: 12px 12px 12px 6px;
+    margin-top: 8px;
+    border-top: 1px solid var(--light-gray);
+    border-right: 1px solid var(--light-gray);
+    border-bottom: 1px solid var(--light-gray);
+    border-left: none;
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+    background: white;
+    cursor: pointer;
+    transition: all 0.14s ease-in-out;
+}
+
+#subtask-add:hover {
+    background: var(--light-gray);
+}
+
+.subtask-container {
+    margin-top: 8px;
+}
+
+.subtask-container label {
+    position: relative;
+    display: flex;
+    width: max-content;
+    padding: 6px 30px;
+    cursor: pointer;
+}
+
+.subtask-container input {
+    appearance: none;
+}
+
+.subtask-container .checkmark {
+    position: absolute;
+    top: 20%;
+    left: 4px;
+    height: 20px;
+    width: 20px;
+    background: url(./../assets/icons/unchecked.svg) no-repeat;
+
+}
+
+.subtask-container input:checked ~ .checkmark {
+    background: url(./../assets/icons/checked.svg) no-repeat;
+}
+
+.subtask-item {
+    justify-content: space-between;;
+}
+
+.subtask-delete {
+    cursor: pointer;
+}
+
+
+/* Buttons */
+.button-container {
+    display: flex;
+    justify-content: end;
+    gap: 25px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    form {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 24px;
+    }
+
+    .form-col {
+        gap: 8px;
+        min-width: auto;
+    }
+
+    .dividing-line {
+        display: none;
+    }
+
+    #priority {
+        grid-template-columns: 1fr;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+}

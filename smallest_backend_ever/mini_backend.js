@@ -1,4 +1,4 @@
-const STORAGE_TOKEN = 'HIER DEIN TOKEN EINFÜGEN';
+const STORAGE_TOKEN = 'QP93NNXSK682FBC5S74PC6PY5FV6VTYCN7PKGF88';
 const STORAGE_URL = 'https://remote-storage.developerakademie.org/item';
 
 

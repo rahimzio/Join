@@ -91,7 +91,7 @@ function logoutModalEventListener() {
  * @returns Array of items.
  */
 async function loadItem(key) {
-    return await JSON.parse(backend.getItem(key)) || [];
+    return await JSON.parse(getItem(key)) || [];
 }
 
 

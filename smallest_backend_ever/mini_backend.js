@@ -1,7 +1,7 @@
-// @ts-check
+
 
 let jsonFromServer = {};
-let BASE_SERVER_URL = 'test';
+let BASE_SERVER_URL = 'https://remote-storage.developerakademie.org/item';
 
 const backend = {
     setItem: function(key, item) {

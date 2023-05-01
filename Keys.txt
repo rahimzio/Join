@@ -1,0 +1,7 @@
+KEY: value
+
+
+
+CONTACTS: [Vorname, Nachname, E-Mail, Telefonnummer]
+
+TASKS: [Titel, Beschreibung, Kategorie, ASSIGNEES[Erster, Zweiter, ...], Due date, Prio, Subtasks]

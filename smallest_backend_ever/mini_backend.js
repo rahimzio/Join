@@ -1,7 +1,7 @@
 // @ts-check
 
 let jsonFromServer = {};
-let BASE_SERVER_URL = 'https://dennis-ammen.developerakademie.net/join/smallest_backend_ever';
+let BASE_SERVER_URL = 'test';
 
 const backend = {
     setItem: function(key, item) {

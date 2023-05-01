@@ -10,8 +10,8 @@ let tasks = [];
  */
 async function init() {
     await getItem();
-    contacts = await loadItem('contacts');
-    tasks = await loadItem('tasks');
+    contacts = await getItem('contacts');
+    tasks = await getItem('tasks');
     renderTaskItems(tasks);
     addSeachBarEventListener();
     addNewTaskButtonEventListener();

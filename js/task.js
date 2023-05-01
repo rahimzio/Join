@@ -10,8 +10,8 @@ let contacts = [];
  */
 async function init() {
     await getItem();
-    contacts = await loadItem('contacts');
-    tasks = await loadItem('tasks');
+    contacts = await getItem('contacts');
+    tasks = await getItem('tasks');
     addTaskEventListener();
     initTask();
 }

@@ -90,9 +90,9 @@ function logoutModalEventListener() {
  * @param {string} key Key of the item that should be loaded.
  * @returns Array of items.
  */
-async function loadItem(key) {
-    return await JSON.parse(getItem(key)) || [];
-}
+// async function loadItem(key) {
+//     return await JSON.parse(getItem(key)) || [];
+// }
 
 
 /**

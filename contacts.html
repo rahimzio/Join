@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Join | Contacts</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/contacts.css">
+    <script defer src="./js/storage.js"></script>
+    <script defer src="./js/notification.js"></script>
+    <script defer src="./js/script.js"></script>
+    <script defer src="./js/contacts-templates.js"></script>
+    <script defer src="./js/contacts.js"></script>
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <section template-html="./assets/templates/navigation.html"></section>
+    
+    <section class="w-100">
+        <!-- Header -->
+        <header template-html="./assets/templates/header.html"></header>
+
+        <!-- Content -->
+        <main class="contacts">
+            <!-- Contact List -->
+            <section class="contacts-container h-100">
+                <button class="btn btn-primary new-contact" id="new-contact">New Contact
+                    <img src="./assets/icons/contact_btn.svg" class="btn-icon">
+                </button>
+
+                <div id="contact-list"></div>
+
+            </section>
+            <!-- Contact Details -->
+            <section class="contact-details content h-100" id="contact-details">
+                <!-- Header -->
+                <div class="contact-details-header">
+                    <h1 class="txt-h1">Contacts</h1>
+                    <div class="line"></div>
+                    <p class="txt-h5">Better with a team</p>
+                    <img src="./assets/icons/arrow_black.svg" alt="Back Icon" id="hide-details">
+                </div>
+                <!-- Details -->
+                <div class="contact-details-body" id="contact-details-body">
+                    <div class="d-flex">
+                        <div class="contact-details-bubble" id="contact-details-bubble">
+                            <p id="contact-details-initials"></p>
+                        </div>
+                        <div>
+                            <h2 class="contact-details-name txt-h2" id="contact-details-name"></h2>
+                            <div class="contact-actions d-flex">
+                                <div class="d-flex" id="edit-contact">
+                                    <img src="./assets/icons/add.svg" draggable="false">
+                                    <p class="edit">Edit</p>
+                                </div>
+                                <div class="d-flex" id="delete-contact">
+                                    <img src="./assets/icons/trash.svg" draggable="false">
+                                    <p class="delete">Delete</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="txt-h4">Contact Information</div>
+                        <div>
+                            <h5 class="txt-h5 details-label">Email:</h5>
+                            <a href="mailto:anton@gmail.com" class="email" id="contact-details-email"></a>
+                        </div>
+                        <div>
+                            <h5 class="txt-h5 details-label">Phone:</h5>
+                            <a href="tel:+491734545623" class="phone" id="contact-details-phone"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Modal -->
+            <dialog id="modal">
+                <div class="modal-top">
+                    <h2 class="txt-h2" id="modal-header">Add Contact</h2>
+                    <img src="./assets/icons/close.svg" alt="Close Icon" class="close-icon" id="close-modal" draggable="false">
+                </div>
+                <form method="dialog" class="modal-form">
+                    <input type="text" name="new-firstname" id="new-firstname" class="text-input" placeholder="Firstname*" required>
+                    <input type="text" name="new-lastname" id="new-lastname" class="text-input" placeholder="Lastname*" required>
+                    <input type="email" name="new-email" id="new-email" class="text-input" placeholder="Email">
+                    <input type="text" name="new-phone" id="new-phone" class="text-input" placeholder="Phone">
+                    <button class="btn btn-primary btn-submit" id="modal-submit">Create Contact
+                        <img src="./assets/icons/check_white.svg">
+                    </button>
+                </form>
+            </dialog>
+        </main>
+    </section>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 let names = [];
 let mails = [];
 let numbers = [];
-let detailName = [];
+let detailNames = [];
 let detailMails =[];
 let detailNumbers = [];
 let alphabetics = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -55,7 +55,7 @@ function renderContact() {
         const mail = mails[i];
         const number = numbers[i];
         contactlist.innerHTML += `
-        <div onclick="showContactDetails(${i})" class="contact-box-name-mail">
+        <div onclick="addToDetails()" class="contact-box-name-mail">
           <b class="name-height">${name}</b>
           <span>${mail}</span>
         </div>
@@ -87,20 +87,31 @@ function deleteContact() {
 }
 
 
-function showContactDetails(c) {
+function showContactDetails() {
     let contactlist = document.getElementById('contactInformation');
 
-    for (let i = 0; i < names.length; c++) {
-        const name = names[c];
-        const mail = mails[c];
-        const number = numbers[c];
+    for (let i = 0; i < detailNames.length; c++) {
+        const detailName = detailNames[c];
+        const detailMail =  detailMails[c];
+        const detailNumber = detailNumbers[c];
         contactlist.innerHTML += `
             <div>
-              <b class="name-height">${name}</b>
-              <span>${mail}</span>
-              <span>${number}</span>
+              <b class="name-height">${detailName}</b>
+              <span>${detailMail}</span>
+              <span>${detailNumber}</span>
             </div>
          `;
     }  
 }
 
+function addToDetails() {
+    let name = names[i];
+    let mail = mails[i];
+    let number = numbers[i];
+    detailNames.push(name);
+    detailMails.push(mail);
+    detailNumbers.üush(number);
+
+    showContactDetails();
+    renderContact();
+}

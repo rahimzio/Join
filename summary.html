@@ -5,13 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <script src="/js/script-demo.js"></script>
+    <script src="/js/script.js"></script>
+    <script defer src="./js/storage.js"></script>
+    <script defer src="./js/notification.js"></script>
+    <script defer src="./js/script.js"></script>
+    <script defer src="./js/task-form.js"></script>
+    <script defer src="./js/task.js"></script>
     <title>summary</title>
 </head>
 <body onload="init()" style="background: #F5F5F5;">
-    <div w3-include-html="./templates/navigation.html"></div>
+        <!-- Navigation -->
+        <section template-html="./assets/templates/navigation.html"></section>
+
+        <section class="w-100">
+            <!-- Header -->
+            <header template-html="./assets/templates/header.html"></header>
     <div class="column" style="width: 100%;">
-    <div w3-include-html="./templates/header.html"></div>
    <div class="row">
   <div class="summary-body">
         <div class="txt-h1 bold margin-B-5">Summary</div>

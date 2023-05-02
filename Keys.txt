@@ -4,9 +4,9 @@ KEY: value
 
 CONTACTS: 
 
-[Vorname, Nachname, E-Mail, Telefonnummer],
-[Vorname, Nachname, E-Mail, Telefonnummer],
-[Vorname, Nachname, E-Mail, Telefonnummer]
+[Vorname, Nachname, E-Mail, Telefonnummer, Farbe, ID],
+[Vorname, Nachname, E-Mail, Telefonnummer, Farbe, ID],
+[Vorname, Nachname, E-Mail, Telefonnummer, Farbe, ID],
 
 
 

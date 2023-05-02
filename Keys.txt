@@ -23,3 +23,23 @@ ASSIGNEES
 [Erster, Zweiter, ...], 
 
 Due date, Prio, Subtasks]
+
+
+let contacs = [
+    {
+        "name": "Marco",
+        "surname": "Loch",
+        "email": "marco@loch.de",
+        "telephone": "0174126547",
+        "color": rgb(152,125,63),
+        "id": 1
+    },
+    {
+        "name": "Marco",
+        "surname": "Loch",
+        "email": "marco@loch.de",
+        "telephone": "0174126547",
+        "color": rgb(152,125,63),
+        "id": 1
+    },
+],

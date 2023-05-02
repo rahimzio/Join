@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <script src="contacts.js"></script>
+    <title>Document</title>
+</head>
+
+<body onload="init()">
+    <div w3-include-html="./templates/navigation.html"></div>
+    <div id="contactlist" class="contact-list"></div>
+    <div>
+        <div class="contact-line-b-w-a-t">
+            <b class="headline-contacts">Contacts</b>
+            <img class="I" src="./assets/icons/vector_I.svg">
+            <span class="b-w-a-t">Better with a team</span>
+        </div>
+        <div id="contactInformation" class="contactinfomation"></div>
+    </div>
+
+
+    <div onclick="showContactBox()" class="new-contact">
+        <p class="new-contact-btn">New Contact</p>
+        <img src="./assets/icons/add_white.svg">
+    </div>
+
+
+    <div id="editContactBoxBckgr" style="display: none;" class="newContactBoxBckgr">
+        <div id="newContactBox" class="newContactBox">
+            <img onclick="closeContactBox()" class="closeImg" src="./assets/icons/close_black.svg">
+            <div class="leftContent">
+                <img src="assets/img/logo_white.svg">
+                <h1>Edit Contact</h1>
+                <div class="newContactBoxLine"></div>
+            </div>
+
+            <div class="contactRightContent">
+                <div class="contactRightContentImg">
+                    <img src="./assets/icons/user_white.svg">
+                </div>
+                <form class="inputFieldSection">
+                    <div class="inputField">
+                        <input required id="" type="name" placeholder="Name">
+                    </div>
+                    <div class="inputField">
+                        <input required id="" type="email" placeholder="Email">
+                    </div>
+                    <div class="inputField">
+                        <input required id="" type="phone" placeholder="Phone">
+                    </div>
+
+
+                    <div class="buttons">
+                        <div class="log-in-guest" onclick="closeContactBox()">
+                            <p>Delete</p>
+                        </div>
+                        <button class="log-in-btn">
+                            <p class="buttonImg">Save Contact</p>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="newContactBoxBckgr" style="display: none;" class="newContactBoxBckgr">
+        <div id="newContactBox" class="newContactBox">
+            <img onclick="closeContactBox()" class="closeImg" src="./assets/icons/close_black.svg">
+            <div class="leftContent">
+                <img src="assets/img/logo_white.svg">
+                <h1>Add Contact</h1>
+                <p>Tasks are better with a team</p>
+                <div class="newContactBoxLine"></div>
+            </div>
+
+            <div class="contactRightContent">
+                <div class="contactRightContentImg">
+                    <img src="./assets/icons/user_white.svg">
+                </div>
+                <form class="inputFieldSection">
+                    <div class="inputField">
+                        <input required id="input1" type="name" placeholder="Name">
+                    </div>
+                    <div class="inputField">
+                        <input required id="input2" type="email" placeholder="Email">
+                    </div>
+                    <div class="inputField">
+                        <input required id="input3" type="phone" placeholder="Phone">
+                    </div>
+
+
+                    <div class="buttons">
+                        <div class="log-in-guest" onclick="closeContactBox()">
+                            <p>Cancel</p>
+                        </div>
+                        <button onclick="addContact()" class="log-in-btn">
+                            <p class="buttonImg">Create Contact</p>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

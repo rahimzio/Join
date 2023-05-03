@@ -24,7 +24,7 @@ ASSIGNEES
 
 Due date, Prio, Subtasks]
 
-..
+...
 let contacs = [
     {
         "name": "Marco",

@@ -9,7 +9,6 @@ let tasks = [];
  * Initial function that gets executed after the document is loaded.
  */
 async function init() {
-    await getItem();
     contacts = await getItem('contacts');
     tasks = await getItem('tasks');
     renderTaskItems(tasks);

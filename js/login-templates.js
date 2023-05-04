@@ -7,7 +7,7 @@ function initLogin(action) {
 function loginHTML() {
     return /*html*/ `
         <header class="d-flex">
-            <img class="logo-animation" src="../assets/img/logo_blue.svg">
+            <img class="logo-animation" src="./assets/img/logo_blue.svg">
             <div class="sign-up-section">
                 <p class="sign-up-text">Not a Join user?</p>
                 <button onclick="initLogin(signUpHTML())" type="button" class="btn btn-primary sign-up-button">Sign up</button>
@@ -34,13 +34,13 @@ function loginHTML() {
 
 function signUpHTML() {
     return /*html*/ `
-        <img class="logo" src="../assets/img/logo_blue.svg">
+        <img class="logo" src="./assets/img/logo_blue.svg">
         <main class="d-flex-col relative">
-            <img class="back" onclick="initLogin(loginHTML())" src="../assets/icons/arrow_blue.svg">
+            <img class="back" onclick="initLogin(loginHTML())" src="./assets/icons/arrow_blue.svg">
             <h1 class="txt-h1">Sign up</h1>
             <div class="line"></div>
             <form onsubmit="register(); return false;" class="d-flex-col gap-40">
-                <input required id="username" class="text-input user-icon" placeholder="Name" type="text">
+                <input required id="username" class="text-input user-icon" placeholder="Name, Surname" type="text" onsubmit="controlName()">
                 <input required id="email" class="text-input mail-icon" placeholder="Email" type="email">
                 <input required id="password" class="text-input lock-icon" placeholder="Password" type="password">
                 <button id="registerButton" class="btn btn-primary login txt-h2">Sign up</button>
@@ -51,9 +51,9 @@ function signUpHTML() {
 
 function forgotPasswordHTML() {
     return /*html*/ `
-        <img class="logo" src="../assets/img/logo_blue.svg">
+        <img class="logo" src="./assets/img/logo_blue.svg">
         <main class="d-flex-col relative">
-            <img class="back" onclick="initLogin(loginHTML())" src="../assets/icons/arrow_blue.svg">
+            <img class="back" onclick="initLogin(loginHTML())" src="./assets/icons/arrow_blue.svg">
             <h1 class="txt-h1">I forgot my password</h1>
             <div class="line"></div>
             <p class="text">Don't worry! We will send you an email with the instructions to<br>reset your password.</p>
@@ -67,9 +67,9 @@ function forgotPasswordHTML() {
 
 function resetPasswordHTML() {
     return /*html*/ `
-        <img class="logo" src="../assets/img/logo_blue.svg">
+        <img class="logo" src="./assets/img/logo_blue.svg">
         <main class="d-flex-col relative">
-            <img class="back" onclick="initLogin(loginHTML())" src="../assets/icons/arrow_blue.svg">
+            <img class="back" onclick="initLogin(loginHTML())" src="./assets/icons/arrow_blue.svg">
             <h1 class="txt-h1">Reset your password</h1>
             <div class="line"></div>
             <p class="text">Change your account password</p>

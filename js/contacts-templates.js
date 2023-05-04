@@ -7,14 +7,14 @@
  * @param {string} id Unique id of the contact.
  * @returns HTML contact card template.
  */
-function contactTemp({ firstname, lastname, email, color, id }, initials) {
+function contactTemp({ name, surname, email, color, id }, initials) {
     return (/*html*/`
         <div class="contact" onclick="showContactDetails('${id}')">
             <div class="contact-bubble" style="background: hsl(${color}, 100%, 30%);">
                 <p class="contact-initials txt-h7">${initials}</p>
             </div>
             <div>
-                <h5 class="contact-full-name txt-h5">${firstname} ${lastname}</h5>
+                <h5 class="contact-full-name txt-h5">${name} ${surname}</h5>
                 <p class="contact-email">${email}</p>
             </div>
         </div>

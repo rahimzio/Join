@@ -206,8 +206,8 @@ function renderAssigneesBubbles() {
 
     for (let i = 0; i < selectedAssignees.length; i++) {
         const contact = contacts.find(contact => contact.id === selectedAssignees[i].id);
-        const firstnameChar = contact.firstname.charAt(0).toUpperCase();
-        const lastnameChar = contact.lastname.charAt(0).toUpperCase();
+        const firstnameChar = contact.name.charAt(0).toUpperCase();
+        const lastnameChar = contact.surname.charAt(0).toUpperCase();
         const initials = `${firstnameChar}${lastnameChar}`;
         const assigneeOffset = i * 12;
 

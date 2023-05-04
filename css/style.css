@@ -109,7 +109,7 @@ body {
     outline: none;
     cursor: pointer;
     white-space: nowrap;
-    transition: 
+    transition:
         color 0.14s ease-in-out,
         background 0.14s ease-in-out,
         box-shadow 0.14s ease-in-out;

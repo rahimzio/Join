@@ -1,5 +1,4 @@
-[
-    {
+let contacts = [{
         "name": "Marco",
         "surname": "Loch",
         "email": "marco@loch.de",
@@ -7,12 +6,13 @@
         "color": "rgb(152,125,63)",
         "id": 1
     },
+
     {
         "name": "Max",
         "surname": "Mustermann",
         "email": "Max@Mustermann.de",
         "telephone": "01776915027",
-        "color":"rgb(100,134,13)",
+        "color": "rgb(100,134,13)",
         "id": 2
     },
 
@@ -33,12 +33,13 @@
         "color": "rgb(12,125,63)",
         "id": 4
     },
+
     {
         "name": "lena",
         "surname": "neid",
         "email": "lenA@neid.de",
         "telephone": "01776915027",
-        "color":"rgb(100,14,13)",
+        "color": "rgb(100,14,13)",
         "id": 5
     },
 
@@ -59,12 +60,13 @@
         "color": "rgb(15,125,3)",
         "id": 7
     },
+
     {
         "name": "Lena",
         "surname": "Feld",
         "email": "Lena@Feld.de",
         "telephone": "0177697627",
-        "color":"rgb(10,34,3)",
+        "color": "rgb(10,34,3)",
         "id": 8
     },
 
@@ -85,12 +87,13 @@
         "color": "rgb(152,125,123)",
         "id": 10
     },
+
     {
         "name": "Nils",
         "surname": "Holgerson",
         "email": "Nils@Holgerson.de",
         "telephone": "0166915027",
-        "color":"rgb(78,134,13)",
+        "color": "rgb(78,134,13)",
         "id": 11
     },
 
@@ -111,12 +114,13 @@
         "color": "rgb(1,2,3)",
         "id": 13
     },
+
     {
         "name": "Bern",
         "surname": "Wiesler",
         "email": "Bern@Wiesler.de",
         "telephone": "01776915027",
-        "color":"rgb(100,134,13)",
+        "color": "rgb(100,134,13)",
         "id": 14
     },
 
@@ -137,12 +141,13 @@
         "color": "rgb(152,0,63)",
         "id": 16
     },
+
     {
         "name": "Josef",
         "surname": "Höhe",
         "email": "Josef@Höhe.de",
         "telephone": "01776915027",
-        "color":"rgb(0,134,13)",
+        "color": "rgb(0,134,13)",
         "id": 17
     },
 
@@ -163,13 +168,14 @@
         "color": "rgb(152,76,63)",
         "id": 19
     },
+
     {
         "name": "Niko",
         "surname": "Sonntag",
         "email": "Niko@Sonntag.de",
         "telephone": "01776915021",
-        "color":"rgb(100,134,76)",
+        "color": "rgb(100,134,76)",
         "id": 20
     }
-    
-]
+
+];

@@ -1,7 +1,7 @@
 'use strict';
 
 
-let contacts = [];
+// let contacts = [];
 let tasks = [];
 
 
@@ -9,8 +9,8 @@ let tasks = [];
  * Initial function that gets executed after the document is loaded.
  */
 async function init() {
-    contacts = await getItem('contacts');
-    tasks = await getItem('tasks');
+    // contacts = await getItem('contacts');
+    // tasks = await getItem('tasks');
     renderTaskItems(tasks);
     addSeachBarEventListener();
     addNewTaskButtonEventListener();

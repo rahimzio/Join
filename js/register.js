@@ -20,6 +20,13 @@ async function register() {
     resetForm();
 }
 
+function checkRegistration() {
+    let user = users.find(u => u.email == email.value);
+    if (user) {
+        throw `Email: ${email.value} already exists.`;
+    }
+}
+
 function resetForm() {
     username.value = '';
     email.value = '';

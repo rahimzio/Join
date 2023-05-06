@@ -1,3 +1,6 @@
+
+
+
 /* Animation */
 @keyframes image {
     0% {
@@ -13,7 +16,9 @@
     }
     
     100% {
-        transform: scale(1);
+        /* transform: scale(1); */
+        margin-top: 0;
+        margin-left: 0;
     }
 }
 
@@ -53,14 +58,17 @@
 /* Top */
 header {
     justify-content: space-between;
+    height: 98px;
 }
 
 .logo {
     width: 80px;
+    height: 98px !important;
 }
 
 .logo-animation {
     width: 80px;
+    height: 98px !important;
     animation: image 2s;
 }
 
@@ -98,6 +106,10 @@ main {
     align-items: center;
     gap: 40px;
     animation: opacity 2s;
+}
+
+form {
+    align-items: center;
 }
 
 

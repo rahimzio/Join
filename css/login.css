@@ -1,4 +1,6 @@
-
+body {
+    position: relative;
+}
 
 
 /* Animation */
@@ -16,7 +18,7 @@
     }
     
     100% {
-        /* transform: scale(1); */
+        transform: scale(1);
         margin-top: 0;
         margin-left: 0;
     }
@@ -63,12 +65,10 @@ header {
 
 .logo {
     width: 80px;
-    height: 98px !important;
+    height: 98px;
 }
 
 .logo-animation {
-    width: 80px;
-    height: 98px !important;
     animation: image 2s;
 }
 
@@ -78,6 +78,9 @@ header {
     gap: 20px;
     height: 51px;
     margin-bottom: 70px;
+}
+
+.animation {
     animation: opacity 2s;
 }
 
@@ -95,17 +98,6 @@ main {
     align-self: center;
     align-items: center;
     gap: 40px;
-}
-
-.animation {
-    padding: 35px 115px;
-    background-color: var(--white);
-    box-shadow: var(--shadow-md);
-    border-radius: var(--border-radius-md);
-    align-self: center;
-    align-items: center;
-    gap: 40px;
-    animation: opacity 2s;
 }
 
 form {
@@ -169,4 +161,40 @@ form {
     align-self: center;
     min-width: 145px;
     height: 51px;
+}
+
+/* Registration succesfull */
+.msgBox {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.msg {
+    border-radius: var(--border-radius-md);
+    background-color: var(--secondary);
+    padding: var(--border-radius-md);
+    color: var(--white);
+    transform: scale(0);
+    animation: box 5s;
+    font-size: var(--h5-font-size);
+    font-weight: 500;
+}
+
+@keyframes box {
+    0% {
+        transform: scale(0);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+    
+    100% {
+        transform: scale(0);
+    }
 }

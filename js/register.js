@@ -10,19 +10,31 @@ async function loadUsers() {
 
 async function register() {
     registerButton.disabled = true;
+    let firstName = username.value.split(', ')[0];
+    let lastName = username.value.split(', ')[1];
     users.push({
-        username: username.value,
+        firstName: firstName,
+        lastName: lastName,
         email: email.value,
         password: password.value,
     })
 
     // await setItem('users', JSON.stringify(users));
-    resetForm();
+    sourceToLogin();
 }
 
-function resetForm() {
-    username.value = '';
-    email.value = '';
-    password.value = '';
-    registerButton.disabled = false;
+function checkRegistration() {
+    let user = users.find(u => u.email == email.value);
+    if (user) {
+        document.getElementById('fault').classList.remove('d-none');
+        document.getElementById('email').style.borderColor = 'red';
+        registerButton.disabled = true;
+    } else {
+        registerButton.disabled = false;
+    }
+}
+
+function sourceToLogin() {
+    backToLogin();
+    document.getElementById('success').classList.remove('d-none');
 }

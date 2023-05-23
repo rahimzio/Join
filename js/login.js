@@ -8,7 +8,7 @@ function login() {
         window.location.href = `summary.html?msg=logged in`;
     } 
     else {
-        document.getElementById('loginPassword').style.borderColor = 'red';
+        loginPassword.style.borderColor = 'red';
     }
 
     saveData();

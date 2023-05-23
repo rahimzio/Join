@@ -19,8 +19,8 @@ body {
     
     100% {
         transform: scale(1);
-        margin-top: 0;
         margin-left: 0;
+        margin-top: 0;
     }
 }
 
@@ -172,13 +172,16 @@ form {
 
 .msg {
     border-radius: var(--border-radius-md);
-    background-color: var(--secondary);
+    background-color: var(--primary);
     padding: var(--border-radius-md);
     color: var(--white);
     transform: scale(0);
-    animation: box 5s;
     font-size: var(--h5-font-size);
     font-weight: 500;
+}
+
+.msg-animation {
+    animation: box 5s;
 }
 
 @keyframes box {

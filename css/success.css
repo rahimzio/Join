@@ -1,0 +1,13 @@
+body {
+    justify-content: center;
+    align-items: center;
+}
+
+.msg {
+    border-radius: var(--border-radius-md);
+    background-color: var(--primary);
+    padding: var(--border-radius-md);
+    color: var(--white);
+    font-size: var(--h5-font-size);
+    font-weight: 500;
+}

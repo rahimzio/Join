@@ -1,0 +1,6 @@
+@media (max-width: 425px) {
+    .sign-up-section {
+        position: absolute;
+        bottom: 0 !important;
+    }
+}

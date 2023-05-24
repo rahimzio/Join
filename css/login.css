@@ -42,6 +42,24 @@ body {
     }
 }
 
+@keyframes box {
+    0% {
+        transform: scale(0);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    80% {
+        transform: scale(1);
+    }
+    
+    100% {
+        transform: scale(0);
+    }
+}
+
 
 /* Global classes */
 .gap-10 {
@@ -182,22 +200,4 @@ form {
 
 .msg-animation {
     animation: box 5s;
-}
-
-@keyframes box {
-    0% {
-        transform: scale(0);
-    }
-
-    20% {
-        transform: scale(1);
-    }
-
-    80% {
-        transform: scale(1);
-    }
-    
-    100% {
-        transform: scale(0);
-    }
 }

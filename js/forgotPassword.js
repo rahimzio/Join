@@ -1,9 +1,10 @@
-let toResetPw;
-
+/**
+ * Function to check if the mail exists, if it´s not, an animation will be plop and the bordercolor turns to red.
+ * @param {Array} users Parameter with the saved userdata
+ */
 function checkMail() {
     let user = users.find(u => u.email == email.value);
     if (user) {
-        toResetPw = email.value;
         email.style.borderColor = '';
     }
     else {
@@ -13,6 +14,9 @@ function checkMail() {
     }
 }
 
+/**
+ * Resets the animation, which shows that the mail is already exists.
+ */
 function deleteMessageBox() {
     let user = users.find(u => u.email != email.value);
     if (user) {

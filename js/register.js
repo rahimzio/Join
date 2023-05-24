@@ -33,6 +33,10 @@ async function register() {
     sourceToLogin();
 }
 
+/**
+ * Function that checks if the email which is wanted to use to register is already exists
+ * If it is, a message-box will be ploped out to change the email 
+ */
 function checkRegistration() {
     let user = users.find(u => u.email == email.value);
     if (user) {
@@ -46,6 +50,10 @@ function checkRegistration() {
     }
 }
 
+/**
+ * Function that sources the user back to the Log-in-Section and
+ * shows an animated pop-out which says that the registration is successful
+ */
 function sourceToLogin() {
     backToLogin();
     success.classList.add('msg-animation');

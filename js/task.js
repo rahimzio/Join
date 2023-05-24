@@ -9,9 +9,9 @@ let contacts = [];
  * Initial function that gets executed after the document is loaded.
  */
 async function init() {
-    await getItem();
-    contacts = await getItem('contacts');
-    tasks = await getItem('tasks');
+    await downloadFromServer();
+    contacts = await loadItem('contacts');
+    tasks = await loadItem('tasks');
     addTaskEventListener();
     initTask();
 }

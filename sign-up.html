@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Join | Sign up</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script defer src="./smallest_backend_ever/mini_backend.js"></script>
+    <script defer src="./js/script.js"></script>
+    <script defer src="./js/signup.js"></script>
+</head>
+
+<body>
+    <main class="w-100 h-100">
+        <div class="content-box">
+            <!-- Sign up -->
+            <a href="./index.html" draggable="false"><img src="./assets/icons/arrow_blue.svg" alt="Back to login." class="btn-back" draggable="false"></a>
+            <h1 class="txt-h1">Sign up</h1>
+            <hr class="line">
+            <form onsubmit="return false" class="w-100 h-100">
+                <div class="input">
+                    <input type="text" name="sign-up-username" class="inp-user text-input" id="sign-up-username" placeholder="Username" required minlength="3">
+                    <input type="email" name="sign-up-email" class="inp-email text-input" id="sign-up-email" placeholder="Email" required>
+                    <input type="password" name="sign-up-password" class="inp-password text-input" id="sign-up-password" placeholder="Password" required minlength="6">
+                </div>
+                <div class="spacing mt-10">
+                    <button class="btn btn-primary btn-sign-up btn-emph" id="sign-up">Sign up</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <img src="./assets/img/logo_blue.svg" alt="Logo" class="logo" draggable="false">
+</body>
+
+</html>

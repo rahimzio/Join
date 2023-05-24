@@ -1,203 +1,249 @@
-body {
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 32px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.content-box {
     position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 652px;
+    padding: 35px 100px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    background: var(--white);
+    z-index: 0;
+}
+
+.line {
+    width: 150px;
+    height: 3px;
+    margin: 35px 0;
+    background-color: transparent;
+    border: none;
+    border-top: 3px solid var(--secondary);
+    border-radius: 3px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.inp-user {
+    margin-bottom: 35px;
+    background: url('./../assets/icons/user.svg') no-repeat right 25px center;
+    background-size: 21px 20px;
+}
+
+.inp-email {
+    margin-bottom: 35px;
+    background: url('./../assets/icons/mail.svg') no-repeat right 25px center;
+    background-size: 18px 20px;
+}
+
+.inp-password {
+    margin-bottom: 35px;
+    background: url('./../assets/icons/lock.svg') no-repeat right 25px center;
+    background-size: 21px 20px;
+}
+
+.btn-emph {
+    font-size: var(--h5-font-size);
+    font-weight: 700;
+}
+
+.btn-login {
+    width: 145px;
+}
+
+.btn-back {
+    position: absolute;
+    top: 35px;
+    left: 32px;
+    cursor: pointer;
+    transition: transform 0.15s ease-in-out;
+}
+
+.btn-back:hover {
+    transform: scale(110%);
+}
+
+.sign-up {
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    white-space: nowrap;
+}
+
+.logo {
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    width: 100px;
+    z-index: -1;
+}
+
+.spacing {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.mb-35 {
+    margin-bottom: 35px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+label {
+    cursor: pointer;
+}
+
+p {
+    text-align: justify;
+}
+
+.fade-in {
+    animation: fade-in 1s ease-in-out;
+}
+
+.anim-logo {
+    animation: logo-animation 1s ease-in-out;
 }
 
 
-/* Animation */
-@keyframes image {
-    0% {
-        transform: scale(5);
-        margin-left: 40vw;
-        margin-top: calc(50vh - 122px);
-    }
-    
-    50% {
-        transform: scale(5);
-        margin-left: 40vw;
-        margin-top: calc(50vh - 122px);
-    }
-    
-    100% {
-        transform: scale(1);
-        margin-left: 0;
-        margin-top: 0;
-    }
-}
-
-@keyframes opacity {
-    0% {
+@keyframes fade-in {
+    from {
         opacity: 0;
     }
 
-    50% {
-        opacity: 0;
-    }
-
-    80% {
-        opacity: 0;
-    }
-
-    100% {
+    to {
         opacity: 1;
     }
 }
 
-@keyframes box {
+@keyframes logo-animation {
     0% {
-        transform: scale(0);
+        top: 50%;
+        left: 50%;
+        width: 274px;
+        transform: translate(-50%, -50%);
+        z-index: 2;
     }
 
-    20% {
-        transform: scale(1);
+    99% {
+        z-index: 2;
     }
 
-    80% {
-        transform: scale(1);
-    }
-    
     100% {
-        transform: scale(0);
+        top: 60px;
+        left: 80px;
+        width: 100px;
+        z-index: -1;
     }
 }
 
 
-/* Global classes */
-.gap-10 {
-    gap: 10px;
-}
+@media screen and (max-width: 576px) {
+    .main {
+        padding: 0 28px;
+    }
 
-.gap-40 {
-    gap: 40px;
-}
+    .content-box {
+        padding: 22.5px 35px;
+        width: 100%;
+        min-height: auto;
+    }
 
-.gap-50 {
-    gap: 50px;
-}
+    .line {
+        width: 88px;
+        margin-top: 24px;
+    }
 
+    .inp-user {
+        margin-bottom: 30px;
+    }
 
-/* Top */
-header {
-    justify-content: space-between;
-    height: 98px;
-}
+    .inp-email {
+        margin-bottom: 30px;
+    }
 
-.logo {
-    width: 80px;
-    height: 98px;
-}
+    .inp-password {
+        margin-bottom: 30px;
+    }
 
-.logo-animation {
-    animation: image 2s;
-}
+    .btn-emph {
+        font-size: var(--h6-font-size);
+        width: 100%;
+    }
 
-.sign-up-section {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    height: 51px;
-    margin-bottom: 70px;
-}
+    .btn-back {
+        top: 24px;
+        left: 20px;
+    }
 
-.animation {
-    animation: opacity 2s;
-}
+    .sign-up {
+        top: auto;
+        right: auto;
+        gap: 21px;
+        left: 50%;
+        bottom: 10px;
+        width: 242px;
+        transform: translate(-50%, -50%);
+    }
 
-.sign-up-button {
-    height: 51px;
-}
+    .logo {
+        top: 24px;
+        left: 32px;
+        width: 40px;
+    }
 
+    .spacing {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 21px;
+    }
 
-/* Center-box */
-main {
-    padding: 35px 115px;
-    background-color: var(--white);
-    box-shadow: var(--shadow-md);
-    border-radius: var(--border-radius-md);
-    align-self: center;
-    align-items: center;
-    gap: 40px;
-}
+    .btn {
+        white-space: normal;
+    }
 
-form {
-    align-items: center;
-}
-
-
-/* Blue line under text */
-.line {
-    border-bottom: 3px solid var(--secondary);
-    width: 150px;
-}
-
-
-/* Return button */
-.relative {
-    position: relative;
-}
-
-.back {
-    position: absolute;
-    left: 45px;
-    top: 45px;
-    cursor: pointer;
-}
+    .txt-h1 {
+        text-align: center;
+    }
 
 
-/* Input */
-.text-input {
-    width: 422px;
-}
+    @keyframes logo-animation {
+        0% {
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
 
-.mail-icon {
-    background: url(../assets/icons/mail.svg) no-repeat right 21px top 13px !important;
-}
+        99% {
+            z-index: 2;
+        }
 
-.lock-icon {
-    background: url(../assets/icons/lock.svg) no-repeat right 21px top 13px !important;
-}
-
-.user-icon {
-    background: url(../assets/icons/user.svg) no-repeat right 21px top 13px !important;
-}
-
-
-/* Forgot password */
-.link {
-    margin-left: 25px;
-    cursor: pointer;
-}
-
-.text {
-    font-size: var(--h5-font-size);
-    font-weight: 400;
-    text-align: center;
-}
-
-
-/* Log in button */
-.login {
-    align-self: center;
-    min-width: 145px;
-    height: 51px;
-}
-
-/* Registration succesfull */
-.msgBox {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.msg {
-    border-radius: var(--border-radius-md);
-    background-color: var(--primary);
-    padding: var(--border-radius-md);
-    color: var(--white);
-    transform: scale(0);
-    font-size: var(--h5-font-size);
-    font-weight: 500;
-}
-
-.msg-animation {
-    animation: box 5s;
+        100% {
+            top: 24px;
+            left: 32px;
+            width: 40px;
+            z-index: -1;
+        }
+    }
 }

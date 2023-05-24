@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/header.css">
-</head>
-<body>
 
-    <div class="nav-menu-desktop">
-        <img src="assets/img/logo_white.svg" alt="Logo" class="logo-nav" draggable="false">
-        <ul class="nav-menu-list">
-            <li class="nav-menu-item" id="summary-desktop">
-                <a href="./summary.html" draggable="false">
-                    <img src="assets/icons/summary.svg" draggable="false">
-                    <span>Summary</span>
-                </a>
-            </li>
-            <li class="nav-menu-item" id="board-desktop">
-                <a href="./board.html" draggable="false">
-                    <img src="assets/icons/board.svg" draggable="false">
-                    <span>Board</span>
-                </a>
-            </li>
-            <li class="nav-menu-item" id="task-desktop">
-                <a href="./task.html" draggable="false">
-                    <img src="assets/icons/task.svg" draggable="false">
-                    <span>Add Task</span>
-                </a>
-            </li>
-            <li class="nav-menu-item" id="contacts-desktop">
-                <a href="./contacts.html" draggable="false">
-                    <img src="assets/icons/contact.svg" draggable="false">
-                    <span>Contacts</span>
-                </a>
-            </li>
-            <li class="nav-menu-item" id="legal-desktop">
-                <a href="./legal.html" draggable="false">
-                    <img src="assets/icons/info.svg" draggable="false">
-                    <span>Legal notice </span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    
+    <title>Join | Login</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <script defer src="./smallest_backend_ever/mini_backend.js"></script>
+    <script defer src="./js/notification.js"></script>
+    <script defer src="./js/script.js"></script>
+    <script defer src="./js/login.js"></script>
+</head>
+
+<body>
+    <main class="w-100 h-100 fade-in">
+        <!-- Sign up -->
+        <div class="sign-up">
+            <p>Not a Join user?</p>
+            <button class="btn btn-primary" id="signup">Sign up</button>
+        </div>
+        <!-- Login -->
+        <div class="content-box">
+            <h1 class="txt-h1">Login</h1>
+            <hr class="line">
+            <form onsubmit="return false" class="w-100 h-100">
+                <div class="input">
+                    <input type="email" name="login-email" class="inp-email text-input" id="login-email" placeholder="Email" required>
+                    <input type="password" name="login-password" class="inp-password text-input" id="login-password" placeholder="Password" required>
+                    <div class="spacing mb-35">
+                        <label ><input type="checkbox" name="remember-me" value="remember" class="checkbox" id="remember-me">Remember me</label>
+                        <a href="./password.html" class="link">Forgot my password</a>
+                    </div>
+                </div>
+                <div class="spacing">
+                    <button class="btn btn-primary btn-login btn-emph" id="login">Login</button>
+                    <button class="btn btn-secondary btn-guest btn-emph" id="guest-login">Guest Login</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <img src="./assets/img/logo_blue.svg" alt="Logo" class="logo anim-logo" draggable="false">
+    <div class="notification" id="notification"></div>
 </body>
+
 </html>

@@ -90,9 +90,9 @@ function logoutModalEventListener() {
  * @param {string} key Key of the item that should be loaded.
  * @returns Array of items.
  */
-// async function loadItem(key) {
-//     return await JSON.parse(getItem(key)) || [];
-// }
+async function loadItem(key) {
+    return await JSON.parse(backend.getItem(key)) || [];
+}
 
 
 /**
@@ -100,9 +100,9 @@ function logoutModalEventListener() {
  * @param {string} key Name of the key under which the items should be stored.
  * @param {string[]} content Array of items that should be stored.
  */
-// async function storeItem(key, content) {
-//     await backend.setItem(key, JSON.stringify(content));
-// }
+async function storeItem(key, content) {
+    await backend.setItem(key, JSON.stringify(content));
+}
 
 
 /**

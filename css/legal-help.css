@@ -1,0 +1,44 @@
+.legal h1,
+.help h1 {
+    margin-bottom: 48px;
+}
+
+.legal h4,
+.help h4 {
+    margin-bottom: 20px;
+}
+
+.legal p,
+.help p {
+    font-size: var(--h6-font-size);
+    margin-bottom: 35px;
+    text-align: justify;
+}
+
+.legal ul,
+.help ul {
+    margin-bottom: 35px;
+}
+
+.legal li,
+.help li {
+    margin-bottom: 10px;
+}
+
+.legal li::marker,
+.help li::marker {
+    font-size: var(--h5-font-size);
+    font-weight: bold;
+}
+
+.help-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.help-images img {
+    justify-self: center;
+    width: 90%;
+}

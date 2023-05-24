@@ -1,0 +1,161 @@
+/* Anchor */
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+
+/* Button */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    height: 52px;
+    padding: 0 16px;
+    font-weight: 700;
+    font-size: var(--font-size-h6);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn:hover,
+.btn:focus-visible {
+    box-shadow: var(--box-shadow-sm);
+    transform: scale(1.05);
+}
+
+.btn:active {
+    box-shadow: none;
+    transform: scale(1);
+}
+
+.btn:focus-visible {
+    outline: 3px solid red;
+    outline-offset: -2px;
+}
+
+.btn-primary {
+    color: white;
+    border: none;
+    background: var(--color-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background: var(--color-secondary);
+}
+
+.btn-primary:active {
+    background: var(--color-active);
+    transition: all 0s;
+}
+
+.btn-secondary {
+    color: var(--color-primary);
+    background: white;
+    border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+}
+
+.btn-secondary:active {
+    color: var(--color-active);
+    border: 2px solid var(--color-active);
+    transition: all 0s;
+}
+
+.btn-secondary svg {
+    width: var(--font-size-h6);
+    height: var(--font-size-h6);
+    stroke: var(--color-primary);
+    transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover svg,
+.btn-secondary:focus-visible svg {
+    stroke: var(--color-secondary);
+}
+
+.btn-secondary:active svg {
+    stroke: var(--color-active);
+    transition: all 0s;
+}
+
+.btn-icon {
+    width: var(--font-size-h6);
+    height: var(--font-size-h6);
+}
+
+
+/* Input Elements*/
+.inp {
+    --padding-x: 21px;
+    position: relative;
+    display: block;
+}
+
+.inp label {
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    font-size: var(--font-size-h6);
+}
+
+.inp span {
+    position: absolute;
+    left: 6px;
+    bottom: 2px;
+    color: red;
+    font-size: var(--font-size-info);
+}
+
+/* Input Text/Textarea */
+.inp input {
+    height: 52px;
+}
+
+.inp textarea {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    resize: none;
+}
+
+.inp textarea~span {
+    bottom: 6px;
+}
+
+.inp input,
+.inp textarea {
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 20px;
+    padding-inline: var(--padding-x);
+    font-size: var(--font-size-h6);
+    border: 2px solid var(--color-light-gray);
+    border-radius: var(--border-radius-md);
+}
+
+.inp input:focus,
+.inp textarea:focus {
+    border: 2px solid var(--color-active);
+}
+
+.inp-background {
+    background: url('./../assets/icons/mail.svg') no-repeat right var(--padding-x) center;
+    background-size: var(--font-size-h6) var(--font-size-h6);
+}
+
+::placeholder {
+    color: var(--color-light-gray);
+}

@@ -12,16 +12,15 @@
     <link rel="stylesheet" href="./css/navigation.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/contacts.css">
-    <!-- <script defer src="./js/JSON.js"></script> -->
-    <script defer src="./js/storage.js"></script>
-    <script defer src="./js/contacts.js"></script>
+    <script defer src="./smallest_backend_ever/mini_backend.js"></script>
+    <script defer src="./js/notification.js"></script>
     <script defer src="./js/script.js"></script>
     <script defer src="./js/contacts-templates.js"></script>
-    <script defer src="./js/notification.js"></script>
+    <script defer src="./js/contacts.js"></script>
 
 </head>
 
-<body onload="init()">
+<body>
     <!-- Navigation -->
     <section template-html="./assets/templates/navigation.html"></section>
     
@@ -89,9 +88,9 @@
                     <img src="./assets/icons/close.svg" alt="Close Icon" class="close-icon" id="close-modal" draggable="false">
                 </div>
                 <form method="dialog" class="modal-form">
-                    <input type="text" name="new-firstname" id="new-name" class="text-input" placeholder="Firstname*" required>
-                    <input type="text" name="new-lastname" id="new-surname" class="text-input" placeholder="Lastname*" required>
-                    <input type="email" name="new-email" id="new-email" class="text-input" placeholder="Email" required>
+                    <input type="text" name="new-firstname" id="new-firstname" class="text-input" placeholder="Firstname*" required>
+                    <input type="text" name="new-lastname" id="new-lastname" class="text-input" placeholder="Lastname*" required>
+                    <input type="email" name="new-email" id="new-email" class="text-input" placeholder="Email">
                     <input type="text" name="new-phone" id="new-phone" class="text-input" placeholder="Phone">
                     <button class="btn btn-primary btn-submit" id="modal-submit">Create Contact
                         <img src="./assets/icons/check_white.svg">

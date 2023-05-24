@@ -1,14 +1,15 @@
+'use strict';
 
-let contacts = [{name: 'Marco', surname: 'Loch', email: 'marco@loch.de', color: 'hsl(123, 100%, 30%)', id: 01112121}];
+
+let contacts = [];
 
 
 /**
- * Initial function that gets executed after the document is loaded
+ * Initial function that gets executed after the document is loaded.
  */
-
 async function init() {
-    debugger;
-    const contacts = getItem(contacts);
+    await downloadFromServer();
+    contacts = await loadItem('contacts');
     buttonEventListener();
     renderContactList();
 }
@@ -26,8 +27,9 @@ function buttonEventListener() {
     closeModalBtn?.addEventListener('click', () => modal?.close());
 }
 
+
 /**
- * Event listener to set the correct data for the modal when creating a new contact
+ * Event listener to set the correct data for the modal when creating a new contact.
  */
 function addContactEventListener() {
     const modalHeader = document.getElementById('modal-header');
@@ -41,34 +43,38 @@ function addContactEventListener() {
     modal?.showModal();
 }
 
+
 /**
- * Adds a contact to the contact list with the data from the input fields
+ * Adds a contact to the contact list with the data from the modal input fields. 
  */
 function addContact() {
     const firstnameInp = document.getElementById('new-firstname');
-    const lasttnameInp = document.getElementById('new-lastname');
+    const lastnameInp = document.getElementById('new-lastname');
     const emailInp = document.getElementById('new-email');
     const phoneInp = document.getElementById('new-phone');
 
-    const { id } = createContact(firstnameInp, lasttnameInp, emailInp, phoneInp);
-    storeContact(id, 'Succesfully Created');
+    if (firstnameInp.checkValidity() && lastnameInp.checkValidity() && emailInp.checkValidity() && phoneInp.checkValidity()) {
+        const { id } = createContact(firstnameInp, lastnameInp, emailInp, phoneInp);
+        storeContact(id);
+    }
 }
 
+
 /**
- * Creates a contact from the given data
+ * Creates a contact from the given data.
  * @param {HTMLElement} firstnameInp Contact firstname.
- * @param {HTMLElement} lasttnameInp Contact lastname.
+ * @param {HTMLElement} lastnameInp Contact lastnam.
  * @param {HTMLElement} emailInp Contact email.
- * @param {HTMLElement} phoneInp Contact phone.
+ * @param {HTMLElement} phoneInp contact phone.
  */
-function createContact(firstnameInp, lasttnameInp, emailInp, phoneInp) {
+function createContact(firstnameInp, lastnameInp, emailInp, phoneInp) {
     const id = Date.now().toString(36);
     const color = Math.floor(Math.random() * 355);
 
     const contact = {
         id: id,
-        name: firstnameInp?.value.trim(),
-        surname: lasttnameInp?.value.trim(),
+        firstname: firstnameInp?.value.trim(),
+        lastname: lastnameInp?.value.trim(),
         email: emailInp?.value.trim(),
         phone: phoneInp?.value.trim(),
         color: color
@@ -78,15 +84,15 @@ function createContact(firstnameInp, lasttnameInp, emailInp, phoneInp) {
     return contact;
 }
 
+
 /**
- * Event listener to set the correct data for the modal when editing an existing contact
- * @param {string} id Unique ID of the contact 
+ * Event listener to set the correct data for the modal when editing an existing contact.
  */
 function editContactEventListener(id) {
     const modal = document.getElementById('modal');
     const modalSubmitBtn = document.getElementById('modal-submit');
     const modalHeader = document.getElementById('modal-header');
-    const contact = contact.find(contact => contact.id === id);
+    const contact = contacts.find(contact => contact.id === id);
 
     modalHeader.innerHTML = 'Edit Contact';
     modalSubmitBtn.innerHTML = 'Save Contact';
@@ -96,42 +102,44 @@ function editContactEventListener(id) {
     modal?.showModal();
 }
 
+
 /**
- * Updates the contact from the list with the given modal input fields
- * @param {string} id Unique ID of the contact 
+ * Updates the contact from the contact list with the given data from the modal input fields. 
+ * @param {string} id Unique id of the contact.
  */
 function editContact(id) {
     const firstnameInp = document.getElementById('new-firstname');
-    const lasttnameInp = document.getElementById('new-lastname');
+    const lastnameInp = document.getElementById('new-lastname');
     const emailInp = document.getElementById('new-email');
     const phoneInp = document.getElementById('new-phone');
-    const contact = contact.find(contact => contact.id === id);
+    const contact = contacts.find(contact => contact.id === id);
 
-    contact.name = firstnameInp.value;
-    contact.surname = lasttnameInp.value;
-    contact.email = emailInp.value;
-    contact.phone = phoneInp.value;
+    if (firstnameInp.checkValidity() && lastnameInp.checkValidity() && emailInp.checkValidity() && phoneInp.checkValidity()) {
+        contact.firstname = firstnameInp.value;
+        contact.lastname = lastnameInp.value;
+        contact.email = emailInp.value;
+        contact.phone = phoneInp.value;
 
-    storeContact(id, 'Successfully Saved');
+        storeContact(id, 'Succesfully saved!');
+    }
 }
 
 
 /**
- * Deletes the contact from the contact list
- * @param {string} id Unique ID of the contact 
+ * Deletes the contact from the contact list. 
+ * @param {String} id Unique id of the contact
  */
 function deleteContact(id) {
     const contactDetailsEl = document.getElementById('contact-details-body');
-    const contact = contact.find(contact => contact.id === id);
+    const contact = contacts.find(contact => contact.id === id);
     const index = contacts.indexOf(contact);
 
     contacts.splice(index, 1);
     contactDetailsEl.classList.add('d-none');
-    setItem('contacts', contacts);
+    storeItem('contacts', contacts);
     renderContactList();
     notify('Succesfully deleted!');
-
-    if(window.matchMedia('(max-width: 576px)')) {
+    if (window.matchMedia("(max-width: 576px)")) {
         const contactDetails = document.getElementById('contact-details');
 
         contactDetails.style.display = 'none';
@@ -140,18 +148,23 @@ function deleteContact(id) {
 
 
 /**
- * Stores the sorted contact list and renders the updated contacts and saves contact details 
- * @param {string} id Unique ID of the contact
- * @param {*} text Notification text
+ * Stores the sorted contact list and renders the updated contacts.
+ * @param {string} id Id of the contact.
+ * @param {string} text Notification text.
  */
 function storeContact(id, text = null) {
     sortContacts();
-    setItem('contacts', contacts);
+    storeItem('contacts', contacts);
     renderContactList();
     showContactDetails(id);
     text ? notify(text) : notify();;
 }
 
+
+/**
+ * Shows the details of the contact.
+ * @param {string} id Unique id of the contact.
+ */
 function showContactDetails(id) {
     const contactDetailsEl = document.getElementById('contact-details-body');
     const bubbleEl = document.getElementById('contact-details-bubble');
@@ -164,20 +177,20 @@ function showContactDetails(id) {
     const contact = contacts.find(contact => contact.id === id);
 
     contactDetailsEl.style.display = 'flex';
-    bubbleEl.style = `background: hsl(${contact.color}, 100%, 33%)`;
-    initialsEl.innerHTML = `${contact.name.charAt(0).toUpperCase()}${contact.surname.charAt(0).toUpperCase()}`;
-    nameEl.innerHTML = `${contact.name} ${contact.surname}`;
+    bubbleEl.style = `background: hsl(${contact.color}, 100%, 30%)`;
+    initialsEl.innerHTML = `${contact.firstname.charAt(0).toUpperCase()}${contact.lastname.charAt(0).toUpperCase()}`
+    nameEl.innerHTML = `${contact.firstname} ${contact.lastname}`;
     emailEl.innerHTML = contact.email;
     emailEl.href = `mailto:${contact.email}`;
     phoneEl.innerHTML = contact.phone;
     phoneEl.href = `tel:${contact.phone}`;
     editBtn.onclick = () => editContactEventListener(id);
     deleteBtn.onclick = () => deleteContact(id);
-
-    if(window.matchMedia('(max-width: 576px)')) {
+    if (window.matchMedia("(max-width: 576px)")) {
         hideDetailsOnMobileButton();
     }
 }
+
 
 /**
  * Shows the hide details button on mobile view.
@@ -191,6 +204,7 @@ function hideDetailsOnMobileButton() {
         contactDetails.style.display = 'none';
     })
 }
+
 
 /**
  * Clears the input fields of the modal.
@@ -207,6 +221,7 @@ function clearInputFields() {
     phoneInp.value = '';
 }
 
+
 /**
  * Prefills the input fields of the modal if the contact gets edited.
  * @param {object} contact Object of the contact.
@@ -217,8 +232,8 @@ function prefillInputFields(contact) {
     const emailInp = document.getElementById('new-email');
     const phoneInp = document.getElementById('new-phone');
 
-    firstnameInp.value = contact.name;
-    lastnameInp.value = contact.surname;
+    firstnameInp.value = contact.firstname;
+    lastnameInp.value = contact.lastname;
     emailInp.value = contact.email;
     phoneInp.value = contact.phone;
 }
@@ -229,10 +244,11 @@ function prefillInputFields(contact) {
  */
 function sortContacts() {
     contacts = contacts.sort((contactA, contactB) => {
-        return contactA.surname.toLowerCase().localeCompare(contactB.surname.toLowerCase()) ||
-            contactA.name.toLowerCase().localeCompare(contactB.name.toLowerCase())
+        return contactA.lastname.toLowerCase().localeCompare(contactB.lastname.toLowerCase()) ||
+            contactA.firstname.toLowerCase().localeCompare(contactB.firstname.toLowerCase())
     });
 }
+
 
 /**
  * Renders the complete contact list including contact seperators.
@@ -243,8 +259,8 @@ function renderContactList() {
     let char = '';
 
     for (let contact of contacts) {
-        const lastnameChar = contact.surname.toUpperCase().charAt(0);
-        const initials = `${contact.name.charAt(0).toUpperCase()}${contact.surname.charAt(0).toUpperCase()}`;
+        const lastnameChar = contact.lastname.toUpperCase().charAt(0);
+        const initials = `${contact.firstname.charAt(0).toUpperCase()}${contact.lastname.charAt(0).toUpperCase()}`;
 
         if (lastnameChar != char) {
             char = lastnameChar;
@@ -257,104 +273,3 @@ function renderContactList() {
 
 
 init();
-
-
-
-
-
-// let names = [];
-// let mails = [];
-// let numbers = [];
-// let detailNames = [];
-// let detailMails =[];
-// let detailNumbers = [];
-// let alphabetics = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-
-
-
-
-// function showContactBox() {
-//     document.getElementById('newContactBoxBckgr').style.display = 'block';
-//     document.getElementById('newContactBoxBckgr').style.display = 'flex';
-// }
-
-
-// function showEditBox() {
-//     document.getElementById('editContactBoxBckgr').style.display = 'block';
-//     document.getElementById('editContactBoxBckgr').style.display = 'flex';
-// }
-
-// function closeContactBox() {
-//     document.getElementById('newContactBoxBckgr').style.display = 'none';
-// }
-
-
-// function renderContact() {
-//     let contactlist = document.getElementById('contactlist');
-//     contactlist.innerHTML = ``;
-
-//     for (let i = 0; i < names.length; i++) {
-//         const name = names[i];
-//         const mail = mails[i];
-//         const number = numbers[i];
-//         contactlist.innerHTML += `
-//         <div onclick="addToDetails()" class="contact-box-name-mail">
-//           <b class="name-height">${name}</b>
-//           <span>${mail}</span>
-//         </div>
-        
-//         `;
-//     }
-// }
-
-
-// function addContact() {
-//     let name = document.getElementById('input1');
-//     let mail = document.getElementById('input2');
-//     let number = document.getElementById('input3');
-//     names.push(name.value);
-//     mails.push(mail.value);
-//     numbers.push(number.value);
-//     document.getElementById('newContactBoxBckgr').innerHTML = ``;
-
-//     renderContact();
-    
-// }
-
-
-// function deleteContact() {
-//     names.splice(i, 1);
-//     mails.splice(i, 1);
-//     numbers.splice(i, 1);
-//     document.getElementById('editContactBoxBckgr').innerHTML = ``;
-// }
-
-
-// function showContactDetails() {
-//     let contactlist = document.getElementById('contactInformation');
-
-//     for (let i = 0; i < detailNames.length; c++) {
-//         const detailName = detailNames[c];
-//         const detailMail =  detailMails[c];
-//         const detailNumber = detailNumbers[c];
-//         contactlist.innerHTML += `
-//             <div>
-//               <b class="name-height">${detailName}</b>
-//               <span>${detailMail}</span>
-//               <span>${detailNumber}</span>
-//             </div>
-//          `;
-//     }  
-// }
-
-// function addToDetails() {
-//     let name = names[i];
-//     let mail = mails[i];
-//     let number = numbers[i];
-//     detailNames.push(name);
-//     detailMails.push(mail);
-//     detailNumbers.üush(number);
-
-//     showContactDetails();
-//     renderContact();
-// }

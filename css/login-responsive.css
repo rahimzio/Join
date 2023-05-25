@@ -58,6 +58,18 @@
         text-align: center;
     }
 
+    .mail-icon {
+        background: url(../assets/icons/mail.svg) no-repeat right 21px top 8px !important;
+    }
+    
+    .lock-icon {
+        background: url(../assets/icons/lock.svg) no-repeat right 21px top 8px !important;
+    }
+    
+    .user-icon {
+        background: url(../assets/icons/user.svg) no-repeat right 21px top 8px !important;
+    }
+
     @keyframes backgroundcolor {
         0% {
             background: var(--primary);

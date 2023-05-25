@@ -16,6 +16,7 @@ function initLogin(action) {
 function backToLogin() {
     let login = document.getElementById('login');
     login.innerHTML = loginHTML();
+    logoResponsive.classList.remove('logo-responsive-animation');
     logo.classList.remove('logo-animation');
     loginBox.classList.remove('animation');
     signUpButton.classList.remove('animation');
@@ -30,6 +31,7 @@ function loginHTML() {
     return /*html*/ `
         <header class="d-flex">
             <img id="logo" class="logo logo-animation" src="./assets/img/logo_blue.svg">
+            <img id="logoResponsive" class="logo-responsive logo-responsive-animation" src="./assets/img/logo_white.svg">
             <div id="signUpButton" class="sign-up-section animation">
                 <p class="sign-up-text">Not a Join user?</p>
                 <button onclick="initLogin(signUpHTML())" type="button" class="btn btn-primary sign-up-button">Sign up</button>
@@ -42,14 +44,16 @@ function loginHTML() {
             <form onsubmit="login(); return false;" class="d-flex-col gap-40">
                 <input id="loginMail" required class="text-input mail-icon" placeholder="Email" type="email">
                 <input id="loginPassword" required class="text-input lock-icon" placeholder="Password" type="password">
-                <div class="d-flex gap-10">
-                    <input id="checkbox" type="checkbox" checked class="checkbox">
-                    <p>Remember me</p>
+                <div class="d-flex gap-10 check">
+                    <div class="d-flex">
+                        <input id="checkbox" type="checkbox" checked class="checkbox">
+                        <p>Remember me</p>
+                    </div>
                     <a onclick="initLogin(forgotPasswordHTML())" class="link">Forgot my password</a>
                 </div>
-                <div class="d-flex gap-50">
-                    <button class="btn btn-primary login txt-h2">Log in</button>
-                    <button type="button" onclick="guestLogin()" class="btn btn-secondary login txt-h2">Guest Log in</button>
+                <div class="d-flex buttons">
+                    <button class="btn btn-primary login">Log in</button>
+                    <button type="button" onclick="guestLogin()" class="btn btn-secondary login">Guest Log in</button>
                 </div>
             </form>
         </main>
@@ -77,7 +81,7 @@ function signUpHTML() {
                 <input id="email" class="text-input mail-icon" placeholder="Email" type="email" oninput="checkRegistration()" required>
                 <input pattern=".{8,}" id="password" class="text-input lock-icon" placeholder="Password" 
                     type="password" title="Please enter a password with 8 or more characters" required>
-                <button id="registerButton" class="btn btn-primary login txt-h2">Sign up</button>
+                <button id="registerButton" class="btn btn-primary login">Sign up</button>
             </form>
         </main>
         <span class="msgBox">
@@ -100,7 +104,7 @@ function forgotPasswordHTML() {
             <p class="text">Don't worry! We will send you an email with the instructions to<br>reset your password.</p>
             <form method="post" class="d-flex-col gap-40">
                 <input required id="email" name="mail" class="text-input mail-icon" placeholder="Email" type="email" oninput="deleteMessageBox()" onblur="checkMail()">
-                <button id="resetButton" class="btn btn-primary login txt-h2">Send me the email</button>
+                <button id="resetButton" class="btn btn-primary login">Send me the email</button>
             </form>
         </main>
 

@@ -1,3 +1,7 @@
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 /* Contact List */
 .contacts {
     display: flex;
@@ -68,6 +72,7 @@
 /* Contact Details */
 .contact-details {
     height: 100%;
+    width: 100%;
 }
 
 .contact-details-header {
@@ -211,6 +216,56 @@ dialog::backdrop {
 }
 
 
+@media screen and (max-width: 1400px) {
+    .contact-details-header {
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .line {
+        height: 3px;
+        width: 130px;
+        background-color: var(--secondary);
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .contacts-container {
+        padding: 35px 40px;
+        min-width: 400px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .content {
+        padding: 80px 60px 40px 60px;
+    }
+
+    .contacts-container {
+        padding: 35px 30px;
+        min-width: 400px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .content {
+        padding: 80px 30px 40px 30px;
+    }
+
+    .contacts-container {
+        min-width: 360px;
+    }
+
+    .new-contact {
+        margin-bottom: 0;
+        bottom: 30px;
+        right: 30px;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .contact-details-header {
         align-items: start;
@@ -275,7 +330,6 @@ dialog::backdrop {
     .contact-actions {
         position: relative;
         top: 10px;
-        left: -80px;
     }
 
     .details-label {
@@ -316,5 +370,9 @@ dialog::backdrop {
     .contacts {
         position: relative;
         height: calc(100% - 70px - 80px);
+    }
+
+    .contact-actions {
+        left: -80px;
     }
 }

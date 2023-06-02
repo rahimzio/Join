@@ -12,6 +12,7 @@
     padding-top: 60px;
     padding-bottom: 24px;
     background: var(--primary);
+    z-index: 999;
 }
 
 .nav-menu-list {
@@ -69,6 +70,7 @@
     bottom: 0;
     height: 80px;
     background: var(--primary);
+    z-index: 999;
 }
 
 .nav-menu-list-mobile {

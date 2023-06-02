@@ -1,4 +1,37 @@
-@media (max-width: 425px) {
+@media screen and (max-width: 680px) {
+    main {
+        padding: 35px 80px;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    main {
+        padding: 35px 40px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .mail-icon {
+        background: url(../assets/icons/mail.svg) no-repeat right 21px top 8px !important;
+    }
+
+    .lock-icon {
+        background: url(../assets/icons/lock.svg) no-repeat right 21px top 8px !important;
+    }
+
+    .user-icon {
+        background: url(../assets/icons/user.svg) no-repeat right 21px top 8px !important;
+    }
+}
+
+
+@media screen and (max-width: 526px){
+    .text-input {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 425px) {
     body {
         height: 100vh !important;
         animation: backgroundcolor 2s;
@@ -61,11 +94,11 @@
     .mail-icon {
         background: url(../assets/icons/mail.svg) no-repeat right 21px top 8px !important;
     }
-    
+
     .lock-icon {
         background: url(../assets/icons/lock.svg) no-repeat right 21px top 8px !important;
     }
-    
+
     .user-icon {
         background: url(../assets/icons/user.svg) no-repeat right 21px top 8px !important;
     }
@@ -88,17 +121,17 @@
         0% {
             opacity: 100%;
             transform: scale(3);
-            margin-left: 40vw;
+            margin-left: 35vw;
             margin-top: calc(50vh - 122px);
         }
-        
+
         50% {
             opacity: 100%;
             transform: scale(3);
-            margin-left: 40vw;
+            margin-left: 35vw;
             margin-top: calc(50vh - 122px);
         }
-        
+
         100% {
             opacity: 0%;
             transform: scale(1);
@@ -106,22 +139,22 @@
             margin-top: 0;
         }
     }
-    
+
     @keyframes image {
         0% {
             opacity: 0;
             transform: scale(3);
-            margin-left: 40vw;
+            margin-left: 35vw;
             margin-top: calc(50vh - 122px);
         }
-        
+
         50% {
             opacity: 0;
             transform: scale(3);
-            margin-left: 40vw;
+            margin-left: 35vw;
             margin-top: calc(50vh - 122px);
         }
-        
+
         100% {
             opacity: 100%;
             transform: scale(1);
@@ -129,6 +162,18 @@
             margin-top: 0;
         }
     }
+}
 
+@media screen and (max-width: 375px) {
+    .text-input {
+        width: 250px;
+    }
+}
 
+@media screen and (max-height: 740px) {
+    .sign-up-section {
+        position: fixed;
+        bottom: -20px;
+        justify-content: center;
+    }
 }

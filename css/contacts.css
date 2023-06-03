@@ -376,3 +376,9 @@ dialog::backdrop {
         left: -80px;
     }
 }
+
+@media screen and (max-width: 480px) {
+    .flex-wrap {
+        flex-wrap: nowrap;
+    }
+}

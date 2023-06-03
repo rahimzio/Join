@@ -234,6 +234,10 @@ dialog::backdrop {
     height: 36px;
 }
 
+#modal-delete:hover {
+    background: var(--urgent);
+}
+
 #modal-delete img {
     width: 12px;
 }

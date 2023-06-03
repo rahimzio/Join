@@ -64,9 +64,16 @@
 }
 
 .contact-email,
-.edit,
-.delete {
+.edit {
     color: var(--secondary);
+}
+
+.delete {
+    color: var(--urgent);
+}
+
+#delete-contact img {
+    filter: hue-rotate(170deg);
 }
 
 /* Contact Details */

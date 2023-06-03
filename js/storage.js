@@ -1,6 +1,5 @@
 const STORAGE_TOKEN = 'QP93NNXSK682FBC5S74PC6PY5FV6VTYCN7PKGF88';
 const STORAGE_URL = 'https://remote-storage.developerakademie.org/item';
-// let contacts = [];
 let tasks = [];
 
 async function setItem(key, value) {
@@ -18,5 +17,3 @@ async function getItem(key) {
         } throw `Could not find data with key "${key}".`;
     });
 }
-
-// setItem(contacts: [{name: 'Marco', surname: 'Loch', email: 'marco@loch.de', color: 'hsl(123, 100%, 30%)', id: 01112121}]);

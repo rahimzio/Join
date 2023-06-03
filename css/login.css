@@ -196,7 +196,6 @@ form {
 .msgBox {
     display: flex;
     justify-content: center;
-    width: 100%;
 }
 
 .msg {
@@ -211,4 +210,8 @@ form {
 
 .msg-animation {
     animation: box 5s;
+}
+
+.responsive {
+    display: none;
 }

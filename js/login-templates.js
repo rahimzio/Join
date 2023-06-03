@@ -20,6 +20,7 @@ function backToLogin() {
     logo.classList.remove('logo-animation');
     loginBox.classList.remove('animation');
     signUpButton.classList.remove('animation');
+    signUpButtonResponsive.classList.remove('animation');
     loadData();
 }
 
@@ -57,6 +58,10 @@ function loginHTML() {
                 </div>
             </form>
         </main>
+        <div id="signUpButtonResponsive" class="sign-up-section responsive animation">
+            <p class="sign-up-text">Not a Join user?</p>
+            <button onclick="initLogin(signUpHTML())" type="button" class="btn btn-primary sign-up-button">Sign up</button>
+        </div>
         <span class="msgBox">
             <p id="success" class="msg">Registration successful</p>
         </span>
